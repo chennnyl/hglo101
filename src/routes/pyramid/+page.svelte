@@ -30,17 +30,9 @@
 {#await dataPromise()}
     <h1>Loading data</h1>
 {:then _}
-    <!-- <div>
-        {#key populationData}
-        <PopulationPyramid countryData={populationData[selectedCountry]}/>
-        {/key}
-        <select bind:value={selectedCountry}>
-            {#each Object.keys(populationData) as country}
-                <option value={country}>{country}</option>
-            {/each}
-        </select>
-    </div>
-        -->
+    <h1>
+        Population Pyramids
+    </h1>
     <h2>Side-by-side comparison</h2>
     <div class="graph">
         {#key selectedYear}

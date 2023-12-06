@@ -1,6 +1,5 @@
 <script lang="ts">
     import Citation from "$lib/Citation.svelte"
-    import Navbar from "$lib/Navbar.svelte"
     import type { APACitation } from "$lib/citation"
 
     const citations: APACitation[] = [
@@ -29,7 +28,8 @@
 {#each citations as citation}
     <Citation {citation}/>
 {/each}
-
+<hr/>
+<p>The source code for this project can be found <a href="https://github.com/chennnyl/hglo101" target="_blank">here</a>.</p>
 
 <style>
     :root {

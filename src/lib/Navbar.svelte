@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { base } from "$app/paths"
+    import { assets, base } from "$app/paths"
 
     interface Link {
         title: string,
@@ -20,6 +20,18 @@
 
 <nav>
     <ul>
+        <li id="header-li">
+            <a href={`${base}`} id="header-url">
+                <div id="header">
+                    <img src={`${assets}/HGLO_lockup_lgtext.png`} alt="Honors Global Communities logo">
+                    <div>
+                        <h3>HGLO101 Final Project</h3>
+                        <h4>Lynne Homann Cure</h4>
+                        <h4>Fall 2023</h4>
+                    </div>
+                </div>
+            </a>
+        </li>
         {#each links as { title, link } }
             <li>
                 <a href={`${base}/${link}`}>{title}</a>
@@ -28,46 +40,80 @@
     </ul>
 </nav>
 <style>
+    #header-url {
+        display: block;
+        padding: 0;
+    }
+    #header-url:hover {
+        color: var(--text-color);
+    }
+    img {
+        height: 80px;
+        aspect-ratio: 1;
+        object-fit: cover;
+        object-position: 0 0;
+    }
+    #header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+    }
+    h3, h4 {
+        margin: 5px;
+    }
     :root {
-        --text-color: black;
-        --light-accent: lightgrey;
-        --hover-light: grey;
+        --text-color: #0b0929;
+        --light-accent: #5e5d6d;
+        --hover-light: #b7b6db;
     }
     nav {
-        margin: auto;
-        width: 80%;
+        background-color: var(--light-accent);
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
     }
     ul {
+        width: 70%;
         margin: auto;
-        background-color: var(--light-accent);
         display: flex;
-        justify-content: space-evenly;
+        align-items: center;
+        justify-content: space-between;
         padding-left: 0;
     }
-
+    #header-li {
+        flex-grow: 1.5;
+    }
     li {
-        display: inline-block;
+        display: flex;
         text-align: center;
         font-size: larger;
         font-weight: bold;
         list-style-type: none;
-        flex-grow: 1;
+        flex: 1;
+        min-height: 100%;
     }
     a:hover {
-        background-color: var(--hover-light);
+        color: var(--hover-light);
         cursor: pointer;
-        transition: background-color 0.1s;
+        transition: color 0.1s;
         
     }
     a {
+        height: 100%;
+        color: var(--text-color);
         width: 100%;
-        display: inline-block;
+        display: block;
         background-color: var(--light-accent);
         text-decoration: none;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 34px;
+        padding-bottom: 34px;
     }
     a:visited {
         color: var(--text-color);
+    }
+    a:visited:hover {
+        color: var(--hover-light);
     }
 </style>
