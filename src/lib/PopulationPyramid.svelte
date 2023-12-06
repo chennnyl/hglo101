@@ -5,6 +5,7 @@
     import { onMount } from "svelte"
 
     export let countryData: PopulationData
+    export let optionsOverrides: any = {}
 
     const data: ChartData<"bar"> = {
         labels: [],
@@ -71,10 +72,13 @@
                 display: true,
                 text: "Data: US Census Bureau"
             }
-        }
+        },
+        ...optionsOverrides
     }
 
     Chart.register(BarElement, Title, SubTitle)
+    Chart.defaults.font.family = "'Times New Roman', Times, serif"
+        
 
     onMount(() => {
         const sortedLabels = Object.keys(countryData.female).filter(key => Object.keys(countryData.male).includes(key)).sort((a, b) => parseInt(b.split("_")[0]) - parseInt(a.split("_")[0]))
