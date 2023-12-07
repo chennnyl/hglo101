@@ -48,11 +48,13 @@
             x: {
                 title: {
                     display: true,
-                    text: "Population (millions)"
+                    text: "% of total population"
                 },
                 ticks: {
-                    callback: (s: number) => Math.abs(s) / 1_000_000
-                }
+                    callback: (s: number) => Math.abs(s) * 100
+                },
+                min: -0.1,
+                max: 0.1
             }
         },
         plugins: {
@@ -60,7 +62,7 @@
                 yAlign: "bottom" as const,
                 callbacks: {
                     label: (ctx: TooltipItem<"bar">) => {
-                        return `Ages ${ctx.label}: ${Math.abs(ctx.raw as number).toLocaleString()}`
+                        return `Ages ${ctx.label}: ${(100*Math.abs(ctx.raw as number)).toFixed(2).toLocaleString()}%`
                     }
                 }
             },

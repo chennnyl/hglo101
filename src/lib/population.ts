@@ -14,10 +14,11 @@ export const getCountryPopulationData = async (start: number, end: number, count
     for(const countryData of json.slice(1)) {
         const country = countryData[0]
         const year = countryData[variables.indexOf("YR")]
+        const totalPopulation = parseInt(countryData[variables.indexOf("POP")])
         out.push({
             country, year,
-            female: populationIndices.filter(i => variables[i].includes("F")).reduce((p,v) => {return {...p, [variables[v].split("FPOP")[1]]: parseInt(countryData[v])}}, {}),
-            male: populationIndices.filter(i => variables[i].includes("M")).reduce((p,v) => {return {...p, [variables[v].split("MPOP")[1]]: parseInt(countryData[v])}}, {})
+            female: populationIndices.filter(i => variables[i].includes("F")).reduce((p,v) => {return {...p, [variables[v].split("FPOP")[1]]: parseInt(countryData[v])/totalPopulation}}, {}),
+            male: populationIndices.filter(i => variables[i].includes("M")).reduce((p,v) => {return {...p, [variables[v].split("MPOP")[1]]: parseInt(countryData[v])/totalPopulation}}, {})
         })
     }
     return out
@@ -33,13 +34,15 @@ export const getCountryPopulationDataOverYears = async (start: number, end: numb
     for(const countryData of json.slice(1)) {
         const country = countryData[0]
         const year = countryData[variables.indexOf("YR")]
+        const totalPopulation = parseInt(countryData[variables.indexOf("POP")])
+
         if(out[country] == undefined) {
             out[country] = {}
         }
         out[country][year] = {
             country, year,
-            female: populationIndices.filter(i => variables[i].includes("F")).reduce((p,v) => {return {...p, [variables[v].split("FPOP")[1]]: parseInt(countryData[v])}}, {}),
-            male: populationIndices.filter(i => variables[i].includes("M")).reduce((p,v) => {return {...p, [variables[v].split("MPOP")[1]]: parseInt(countryData[v])}}, {})
+            female: populationIndices.filter(i => variables[i].includes("F")).reduce((p,v) => {return {...p, [variables[v].split("FPOP")[1]]: parseInt(countryData[v])/totalPopulation}}, {}),
+            male: populationIndices.filter(i => variables[i].includes("M")).reduce((p,v) => {return {...p, [variables[v].split("MPOP")[1]]: parseInt(countryData[v])/totalPopulation}}, {})
         }
     }
     return out
