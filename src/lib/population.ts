@@ -4,26 +4,6 @@ export const fetchCountries = async (start: number, end: number, countries: Coun
         .then(f => f.json())
 }
 
-export const getCountryPopulationData = async (start: number, end: number, countries: Country[]): Promise<PopulationData[]> => {
-    const json: any[][] = await fetchCountries(start, end, countries)
-
-    const variables: string[] = json[0]
-    const populationIndices = variables.map((v,i) => ((v.includes("FPOP") || v.includes("MPOP")) && v.length != 4) ? i : -1).filter(v => v >= 0)
-    const out: PopulationData[] = []
-
-    for(const countryData of json.slice(1)) {
-        const country = countryData[0]
-        const year = countryData[variables.indexOf("YR")]
-        const totalPopulation = parseInt(countryData[variables.indexOf("POP")])
-        out.push({
-            country, year,
-            female: populationIndices.filter(i => variables[i].includes("F")).reduce((p,v) => {return {...p, [variables[v].split("FPOP")[1]]: parseInt(countryData[v])/totalPopulation}}, {}),
-            male: populationIndices.filter(i => variables[i].includes("M")).reduce((p,v) => {return {...p, [variables[v].split("MPOP")[1]]: parseInt(countryData[v])/totalPopulation}}, {})
-        })
-    }
-    return out
-}
-
 export const getCountryPopulationDataOverYears = async (start: number, end: number, countries: Country[]): Promise<PopulationYearData> => {
     const json: any[][] = await fetchCountries(start, end, countries)
 

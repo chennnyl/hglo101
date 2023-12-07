@@ -1,23 +1,18 @@
 <script lang="ts">
-    import { getCountryPopulationData, type PopulationData, Country, type PopulationYearData, getCountryPopulationDataOverYears } from "$lib/population"
+    import { Country, type PopulationYearData, getCountryPopulationDataOverYears } from "$lib/population"
     import PopulationPyramid from "$lib/PopulationPyramid.svelte"
-    import Navbar from "$lib/Navbar.svelte"
-    import { onMount } from "svelte";
 
     let selectedCountry: string
     let selectedYear: number = 1990
 
-    let populationData: {[key: string]: PopulationData}
-    let slidingPopulationData: PopulationYearData
+    let populationData: PopulationYearData
 
     const countries = [Country.UnitedStatesofAmerica, Country.Japan, Country.Nigeria]
     let countryKeys: string[] = []
 
     const dataPromise = (async () => {
-        const data = await getCountryPopulationData(2023, 2023, countries)
-        populationData = data.reduce((p,c) => {return {...p, [c.country]: c}}, {})
-        slidingPopulationData = await getCountryPopulationDataOverYears(1990, 2022, countries)
-        countryKeys = Object.keys(slidingPopulationData)
+        populationData = await getCountryPopulationDataOverYears(1990, 2022, countries)
+        countryKeys = Object.keys(populationData)
         selectedCountry = countryKeys[0]
     })
 
@@ -38,7 +33,7 @@
         {#key selectedYear}
             {#each countryKeys as country}
             <div class="pyramid">
-                <PopulationPyramid countryData={slidingPopulationData[country][selectedYear]}/>
+                <PopulationPyramid countryData={populationData[country][selectedYear]}/>
             </div>
             {/each}
         {/key}
@@ -53,7 +48,7 @@
         {#key selectedCountry}
             {#each [1990, 2000, 2010, 2020] as year}
                 <div class="pyramid">
-                    <PopulationPyramid countryData={slidingPopulationData[selectedCountry][year]}/>
+                    <PopulationPyramid countryData={populationData[selectedCountry][year]}/>
                 </div>
             {/each}
         {/key}
