@@ -1,13 +1,15 @@
 <script lang="ts">
     import { Country, type PopulationYearData, getCountryPopulationDataOverYears } from "$lib/population"
     import PopulationPyramid from "$lib/PopulationPyramid.svelte"
+    import ProportionalAreaChart from "$lib/ProportionalAreaChart.svelte"
 
     let selectedCountry: string
     let selectedYear: number = 1990
 
     let populationData: PopulationYearData
+    let areaChart: ProportionalAreaChart
 
-    const countries = [Country.UnitedStatesofAmerica, Country.Japan, Country.Nigeria]
+    const countries = [Country.China, Country.Japan, Country.UnitedStatesofAmerica]
     let countryKeys: string[] = []
 
     const dataPromise = (async () => {
@@ -38,6 +40,15 @@
             {/each}
         {/key}
     </div>
+    <div class="graph">
+        {#key selectedYear}
+            {#each countryKeys as country}
+            <div class="pyramid">
+                <ProportionalAreaChart country={country} populationYearData = {populationData}/>
+            </div>
+            {/each}
+        {/key}
+    </div>
     <div class="row">
         {#each [1990, 2000, 2010, 2020] as year}
             <button on:click={()=>{selectedYear = year}}>{year}</button>
@@ -55,9 +66,14 @@
     </div>
     <div class="row">
         {#each countryKeys as country}
-            <button on:click={()=>{selectedCountry = country}}>{country}</button>
+            <button on:click={()=>{selectedCountry = country; areaChart.setData(country)}}>{country}</button>
         {/each}
     </div>
+
+    <br/>
+
+    <!-- <ProportionalAreaChart bind:this={areaChart} country={selectedCountry} populationYearData={populationData}/> -->
+
 {/await}
 
 <style>

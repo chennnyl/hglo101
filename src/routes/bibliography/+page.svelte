@@ -15,6 +15,12 @@
             title: "8 Billion and Counting: How Sex, Death, and Migration Shape Our World",
             date: "2022",
             source: "W. W. Norton and Company"
+        },
+        {
+            author: "Hooper, Rowan",
+            title: "How to Save the World for Just a Trillion Dollars: The Ten Biggest Problems We Can Actually Fix",
+            date: "2022",
+            source: "The Experiment"
         }
     ].sort((a, b) => a.author.localeCompare(b.author))
 
