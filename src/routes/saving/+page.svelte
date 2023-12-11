@@ -46,4 +46,4 @@
     <div>
         <StwBarChart {barData}/>
     </div>
-{/each}
+{/each} 
