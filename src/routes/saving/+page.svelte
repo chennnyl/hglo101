@@ -104,14 +104,29 @@
     The Twomey effect is an atmospheric phenomenon where the more saturated clouds are with water, the more they reflect solar radiation. By seeding clouds in the poles, we may be able to create artificial, whiter clouds and achieve cooling sufficient to restore the sea ice; however, it depends on hitherto undiscovered technology to unleash an ultrafine mist in a wide area, but investment on the order of $1 billion to develop remote drones to deliver the spray may be enough to rectify that. 
 </p>
 <h3>Restoration of peatlands</h3>
+<p>
+    Peat bogs are, effectively, massive lumps of carbon. Similarly, regions like mangroves and salt marshes contain vast amounts of trapped carbon, but they dry out over time, allowing carbon to escape. By ensuring they do not dry out, we can prevent a present and future source of emissions from worsening our existing climate emergency.
+</p>
 <h3>Global tree planting and reforestation</h3>
+<p>
+    Earth may be capable of supporting a third more trees than are currently planted -- and, if planted, those trees could fix 226 billion tons of CO<sub>2</sub>. Considering human emissions are around 41 billion tons annually, that's not an amount to sneeze at. Though we are unlikely to be able to achieve that full 226 billion tons due to land and agricultural restrictions, global afforestation on a global scale could be a vital natural component of our solution to carbon emissions.  
+</p>
 <h3>Global kelp afforestation</h3>
+<p>
+    Kelp is a bit of a powerhouse; it grows incredibly rapidly, promotes biodiversity through deacidification, and traps all of its gathered carbon in seabed sediment when it dies, removing an estimated 191 million tons of carbon per year. Ocean afforestation with kelp, similarly to land afforestation, is cheap, scalable, and, crucially, already proven to work.
+</p>
 <h3>Ocean engineering with whale population</h3>
+<p>
+    When whales die, their sinking corpses (yes, a little morbid) transmit and sequester carbon they have captured from the shallow regions of the ocean to the very deep. Baleen whale (such as blue whales) populations have been decimated by damage to their environment and hunting, and restoring them would not only help naturally capture carbon, but also stimulate phytoplankton growth, promoting biodiversity and enriching the marine ecosystem at large.
+</p>
 <h3>Renewable carbon capture and storage at scale</h3>
 <p>
     The possibility and maximum effectiveness of capturing carbon dioxide from the atmosphere and storing it at scale -- either through biological solutions such as planting more trees and growing more plants in the ocean or technological ones which capture the carbon, which is then buried underground -- is also uncertain, but it could be a major tool in reaching negative emissions and preventing global heating of over 2°. Unlike many of the other proposals, the issue is not so much a lack of technology but a lack of funds. Thus, a massive stimulus may be enough to launch full-scale carbon capture endeavors.
 </p>
 <h3>Greenhouse gas capture</h3>
+<p>
+    Methane, nitrous oxide, and other greenhouse gases are no less worth addressing than carbon dioxide. Curiously, one promising solution for capturing them from the atmosphere and slowing global warming is to oxidize them to carbon dioxide, which can then be captured by any of the other means in this section. 
+</p>
 <h3>Carbon-fixing competitions</h3>
 <p>
     We need innovation in making carbon capture both cheaper and more efficient -- opening up the playing field to smaller innovators by launching competitions with ten-million-dollar prizes to demonstrate how to fix and bury 100,000 tons of carbon or how to fix 1 ton of carbon for $200 (rather than the current $600) will stimulate and accelerate the development of better and cheaper technology to capture carbon dioxide from the atmosphere. 
