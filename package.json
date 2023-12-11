@@ -22,6 +22,8 @@
 	"type": "module",
 	"dependencies": {
 		"chart.js": "^4.4.1",
+		"chartjs-plugin-autocolors": "^0.2.2",
+		"chartjs-plugin-datalabels": "^2.2.0",
 		"svelte-chartjs": "github:SauravKanchan/svelte-chartjs"
 	}
 }

@@ -6,13 +6,14 @@
 
     export let populationYearData: PopulationYearData
     export let country: string
+    export let optionsOverrides: any = {}
 
     const data: ChartData<"line"> = {
         labels: [],
         datasets: []
     }
 
-    const options = {
+    let options = {
         responsive: true,
         aspectRatio: 1,
         interaction: {
@@ -32,18 +33,24 @@
                 },
                 min: 0,
                 max: 1
+            },
+            x: {
+                title: {
+                    display: true,
+                    text: "Year"
+                }
             }
         },
         elements: {
             point: {
-                radius: 1.5
+                radius: 2
             }
         },
         plugins: {
             tooltip: {
                 callbacks: {
                     label: (ctx: TooltipItem<"line">) => {
-                        return `Ages ${ctx.label}: ${(100*Math.abs(ctx.raw as number)).toFixed(2).toLocaleString()}%`
+                        return `Ages ${ctx.dataset.label}: ${(100*Math.abs(ctx.raw as number)).toFixed(2).toLocaleString()}%`
                     }
                 }
             },
@@ -55,7 +62,8 @@
                 display: true,
                 text: "Data: US Census Bureau"
             }
-        }
+        },
+        ...optionsOverrides
     }
 
     export const setData = (country: string) => {
@@ -99,6 +107,8 @@
         })
 
         options.plugins.title.text = `${country} population proportions, ${years[0]}-${years[years.length-1]}`
+
+        // options = {...options, ...optionsOverrides}
     }
 
     onMount(() => {
@@ -107,6 +117,7 @@
 
 
     Chart.register(LineElement, Title, SubTitle)
+    Chart.defaults.font.family = "'Times New Roman', Times, serif"
 </script>
 
 {#key data.labels}

@@ -8,8 +8,12 @@
 
     const links: Link[] = [
         {
-            title: "Population Pyramids",
-            link: "pyramid"
+            title: "Demographic Transition",
+            link: "population"
+        },
+        {
+            title: "Saving the World for a Trillion Dollars",
+            link: "saving"
         },
         {
             title: "Bibliography",

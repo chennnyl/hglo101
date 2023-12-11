@@ -21,6 +21,13 @@
             title: "How to Save the World for Just a Trillion Dollars: The Ten Biggest Problems We Can Actually Fix",
             date: "2022",
             source: "The Experiment"
+        },
+        {
+            author: "Diethelm, David",
+            title: "Population Pyramids",
+            date: "2002",
+            source: "Oregon State University",
+            url: "https://www.fsl.orst.edu/pnwerc/wrb/Atlas_web_compressed/5.Human_Populations/5h.pyramids_web.pdf"
         }
     ].sort((a, b) => a.author.localeCompare(b.author))
 

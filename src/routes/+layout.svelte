@@ -13,7 +13,8 @@
         font-family: Georgia, 'Times New Roman', Times, serif;
     }
     main {
-        padding-top: 100px;
+        padding-top: 125px;
+        padding-bottom: 75px;
         margin: auto;
         width: 70%;
     }
