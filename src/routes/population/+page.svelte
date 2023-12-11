@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+    import { base } from "$app/paths";
     import { Country, type PopulationYearData, getCountryPopulationDataOverYears } from "$lib/population"
     import PopulationPyramid from "$lib/PopulationPyramid.svelte"
     import ProportionalAreaChart from "$lib/ProportionalAreaChart.svelte"
@@ -23,7 +23,7 @@
         Demographic Transition
     </h1>
 
-    <h2>Introduction: Population pyramids and age structure</h2>
+    <h2>Population pyramids and age structure</h2>
     <h3>How to read a population pyramid</h3>
     <p>
         On this page, I make heavy use of <strong>population pyramids</strong>. Population pyramids are a tool used by demographers to examine how the entire population of a country is distributed across age and gender groups, informing our understanding of how that population may shift over time. A population pyramid takes the form of a stacked horizontal bar chart, where bars are present for each age group, stacked by gender. Population pyramids come in many shapes and sizes, but there are three rough patterns that can describe where a country is in the <strong>demographic transition</strong> (Diethelm, 2002): 
@@ -55,7 +55,9 @@
     <p>
         This shift in age structure accompanying social and economic development is what we call the <strong>demographic transition</strong>, and countries across the world are in various stages of the demographic transition. For the following two sections, we'll glance at parts of the world in both the very early and very late stages. 
     </p>
-
+    <p>
+        <strong><em>For an interactive demo of the population graphs, you can go <a href={`${base}/population/demo`}>here</a>.</em></strong>
+    </p>
 
     <h2>Baby booms: Chad and Botswana</h2>
     <p>

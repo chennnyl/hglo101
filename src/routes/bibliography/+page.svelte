@@ -28,6 +28,34 @@
             date: "2002",
             source: "Oregon State University",
             url: "https://www.fsl.orst.edu/pnwerc/wrb/Atlas_web_compressed/5.Human_Populations/5h.pyramids_web.pdf"
+        },
+        {
+            author: "Congressional Budget Office",
+            title: "The Federal Budget in Fiscal Year 2022: An Infographic",
+            date: "2023",
+            source: "Congressional Budget Office",
+            url: "https://www.cbo.gov/publication/58888"
+        },
+        {
+            author: "National Equity Atlas",
+            title: "Wages: Median",
+            date: "2023",
+            source: "PolicyLink",
+            url: "https://nationalequityatlas.org/indicators/Wages_Median"
+        },
+        {
+            author: "World Food Program USA",
+            title: "How Much Would It Cost to End World Hunger?",
+            date: "2022",
+            source: "World Food Program USA",
+            url: "https://www.wfpusa.org/articles/how-much-would-it-cost-to-end-world-hunger/"
+        },
+        {
+            author: "Kafuko, Zacharia",
+            title: "New Lifesaving Malaria Vaccines Need to Be Available Now",
+            date: "2023",
+            source: "Foreign Policy",
+            url: "https://foreignpolicy.com/2023/12/08/new-malaria-vaccine-africa-world-health-organization-child-mortality/"
         }
     ].sort((a, b) => a.author.localeCompare(b.author))
 
